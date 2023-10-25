@@ -1,0 +1,59 @@
+header {
+    background-color: #6200EE;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.search {
+    display: flex;
+
+}
+
+.search input {
+    width: 50%;
+    margin-right: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+}
+
+.dropdown {
+    background-color: #6200EE;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    z-index: 100;
+
+
+}
+
+.dropdown:empty {
+    border: none;
+    z-index: 100;
+}
+
+.dropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+    z-index: 100;
+
+
+}
