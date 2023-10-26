@@ -1,0 +1,38 @@
+/*h1 {*/
+/*    text-align: center;*/
+/*}*/
+.add-form {
+    display: block;
+    max-width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.add-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+.add-form small {
+
+    font-weight: normal;
+
+}
+
+.add-form input, .add-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.add-form button {
+    width: 100%;
+    margin-top: 10px;
+
+    padding: 10px;
+}
