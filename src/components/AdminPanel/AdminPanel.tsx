@@ -3,14 +3,29 @@ import {RoadsDetails} from "./subcomponents/RoadsDetails";
 import {SimpleRoadEntity} from "types";
 import {SearchContext} from "../../contexts/search.contexts";
 import './AdminPanel.css';
+import {AuthContext} from "../../contexts/auth.contexts";
+import {useNavigate} from "react-router-dom";
 
 export const AdminPanel = () => {
 
     const [roads, setRoads] = useState<SimpleRoadEntity[]>([]);
     const {search} = useContext(SearchContext);
+    const {loggedIn,setLoggedIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!loggedIn) {
+            navigate('/login');
+        }
+    }, [loggedIn]);
+
 
     const handleDeleteRoad = (id: string) => {
         setRoads(prev => prev.filter(road => road.id !== id));
+    }
+
+    const handleClick = () => {
+        setLoggedIn(false);
     }
 
     useEffect(() => {
@@ -35,7 +50,9 @@ export const AdminPanel = () => {
                         ))
                     }
                 </section>
+                <button onClick={handleClick}>Wyloguj</button>
             </div>
+
         </>
 
     )

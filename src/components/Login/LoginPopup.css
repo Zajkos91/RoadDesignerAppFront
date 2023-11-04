@@ -124,3 +124,12 @@
 
 }
 
+.validate-message {
+    color: red;
+    padding: 1px;
+    background-color: #eaa7a7;
+    border: 1px solid #6e0c0c;
+    border-radius: 3px;
+    text-align: center;
+}
+

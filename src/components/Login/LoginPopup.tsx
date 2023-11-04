@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useEffect, useState} from 'react';
+import React, {SyntheticEvent, useContext, useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './LoginPopup.css';
 import {Btn} from "../common/Button/Btn";
@@ -6,6 +6,7 @@ import {InputPassword} from "./subcomponents/ShowInputPassword";
 import {Modal} from "../Modal/Modal";
 import {Spinner} from "../common/Spinner/Spinner";
 import bcrypt from "bcryptjs-react";
+import {AuthContext} from "../../contexts/auth.contexts";
 
 
 export const LoginPopup = () => {
@@ -15,6 +16,7 @@ export const LoginPopup = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [validateMessage, setValidateMessage] = useState('');
+    const {setLoggedIn} = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -26,10 +28,12 @@ export const LoginPopup = () => {
     const handleClick = (e: SyntheticEvent) => {
         e.preventDefault();
         setIsActive(prev => !prev);
+
     };
     const resetStateOfInputs = () => {
         setLogin('');
         setPassword('');
+        setValidateMessage('');
     }
 
 
@@ -53,10 +57,13 @@ export const LoginPopup = () => {
             });
             const data = await res.json();
             console.log(data);
-            resetStateOfInputs();
-            if (res.ok) {
 
+            if (res.ok) {
+                resetStateOfInputs();
+                setLoggedIn(true);
                 navigate('/admin');
+            } else {
+                setValidateMessage(data.message);
             }
 
         } catch (e) {
@@ -74,7 +81,7 @@ export const LoginPopup = () => {
         return <Spinner text='Logowanie...'/>
     }
 
-
+    const validateMessageComponent = validateMessage.length ? <p className="validate-message">{validateMessage}</p> : null;
 
     return <>
         {/*<Modal>*/}
@@ -86,6 +93,7 @@ export const LoginPopup = () => {
             <form className="form" onSubmit={handleOnSubmit}>
                 <h2>Logowanie</h2>
                 <div className="form-element">
+                    {validateMessageComponent}
                     <label>
                         Login:
                         <input
