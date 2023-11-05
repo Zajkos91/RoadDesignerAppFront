@@ -16,7 +16,7 @@ export const LoginPopup = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [validateMessage, setValidateMessage] = useState('');
-    const {setLoggedIn} = useContext(AuthContext);
+    const {loggedIn, setLoggedIn} = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,6 +24,12 @@ export const LoginPopup = () => {
             resetStateOfInputs();
         }
     }, [isActive]);
+
+    useEffect(() => {
+        if (loggedIn) {
+            navigate('/admin');
+        }
+    }, [loggedIn]);
 
     const handleClick = (e: SyntheticEvent) => {
         e.preventDefault();

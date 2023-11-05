@@ -3,6 +3,7 @@ import {Btn} from "../common/Button/Btn";
 import {SearchContext} from "../../contexts/search.contexts";
 import {SimpleRoadEntity} from "types";
 import {SearchDropDown} from "./SearchDropDown";
+import {Link} from "react-router-dom";
 
 
 export const Header = () => {
@@ -37,9 +38,8 @@ export const Header = () => {
         <>
             <header>
                 <h1>
-                    <a href="/"><strong>Drogowiec</strong> Inwestycje</a>
+                    <Link to = "/"><strong>Drogowiec</strong> Inwestycje</Link>
                 </h1>
-                <Btn to="add/" text="Dodaj inwestycje drogową"/>
                 <Btn to="login/" text="Panel admina"/>
                 <div className="search-container">
                     <form className="search" onChange={setSearchFromLocalState} onSubmit={setSearchFromLocalState}>
