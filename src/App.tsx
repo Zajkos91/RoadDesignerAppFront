@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useState} from 'react';
 import {Header} from "./components/layout/Header";
 import './components/layout/Header.css';
 import {Map} from "./components/Map/Map";

@@ -1,17 +1,24 @@
-import React, {SyntheticEvent, useEffect, useState} from "react";
+import React, {SyntheticEvent, useContext, useEffect, useState} from "react";
 import './AddForm.css';
 import {Btn} from "../common/Button/Btn";
 import {geocode} from "../../utils/geocoding";
 import {Spinner} from "../common/Spinner/Spinner";
-
-
-
+import {AuthContext} from "../../contexts/auth.contexts";
+import {useNavigate} from "react-router-dom";
 
 
 export const AddForm = () => {
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState('');
     const [added, setAdded] = useState(false);
+    const {loggedIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!loggedIn) {
+            navigate('/login');
+        }
+    }, [loggedIn]);
 
     const [form, setForm] = useState({
         name: '',
@@ -60,13 +67,11 @@ export const AddForm = () => {
             setId(data.id);
 
 
-        }
-        catch (e) {
+        } catch (e) {
             alert('Błąd danych spróbuj ponownie');
             console.warn(e);
 
-        }
-        finally {
+        } finally {
             setLoading(false);
             setAdded(true);
             console.log(added);
@@ -81,16 +86,18 @@ export const AddForm = () => {
     if (id && added) {
         return (
             <>
-                <h2>Twoja inwestycja "{form.name}" została poprawnie dodana do serwisu pod ID: {id}.</h2>
-                <Btn onClick={() => setAdded(false)}  text="Dodaj kolejną inwestycje"/>
-                <Btn to="/" text="Powrót do mapy"/>
+                <div className="added">
+                    <h3>Twoja inwestycja "{form.name}" została poprawnie dodana do serwisu pod ID: {id}.</h3>
+                    <Btn onClick={() => setAdded(false)} text="Dodaj kolejną inwestycje"/>
+                    <Btn to="/" text="Powrót do mapy"/>
+                </div>
             </>
         )
     }
 
     return (
         <form className="add-form" onSubmit={saveRoad}>
-            <h1>Dodawanie inwestycji drogowej</h1>
+            <h2>Dodawanie inwestycji drogowej</h2>
             <p>
                 <label>
                     Nazwa: <br/>

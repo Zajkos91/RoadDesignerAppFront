@@ -3,13 +3,13 @@ import React from "react";
 import {SimpleRoadEntity} from "types";
 
 
-
 interface Props {
     roads: SimpleRoadEntity[];
     search: string;
     onSearch: (searchTerm: string) => void;
 
 }
+
 export const SearchDropDown = (props: Props) => {
 
     return (

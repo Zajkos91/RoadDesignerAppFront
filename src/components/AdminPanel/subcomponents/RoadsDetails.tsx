@@ -8,6 +8,8 @@ interface Props {
     description: string;
     url: string;
     realisationYear: number;
+    startAddress: string,
+    endAddress: string,
     onDelete: (id: string) => void;
     onRefresh: () => void;
 

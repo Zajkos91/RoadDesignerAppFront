@@ -11,10 +11,7 @@ interface Props {
 }
 
 export const SingleRouteLine = (props: Props) => {
-    const map = useMap().setView([53.1450159, 22.1319976], 8);
-    // const layer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    // attribution: "OpenStreetMap contributors"}).addTo(map);
-
+    const map = useMap().setView([53.1450159, 22.1319976], 7);
 
     useEffect(() => {
 
@@ -47,14 +44,6 @@ export const SingleRouteLine = (props: Props) => {
         });
 
         control.addTo(map);
-
-        // return () => {
-        //     if (control) {
-        //     map.removeControl(control);
-        //     map.removeLayer(layer);
-        //     }
-        // };
-
 
     }, [map]);
 

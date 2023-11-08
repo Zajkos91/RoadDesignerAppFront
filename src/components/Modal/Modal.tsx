@@ -14,11 +14,11 @@ export const Modal: React.FC<ModalProps> = ({children, handleOnClose, isOpen}) =
     const previousActiveElement = useRef<Element | null>(null);
 
     useEffect(() => {
-        if(!modalRef.current) {
+        if (!modalRef.current) {
             return;
         }
         const {current: modal} = modalRef;
-        if(isOpen) {
+        if (isOpen) {
             previousActiveElement.current = document.activeElement;
             modal.showModal();
         } else if (previousActiveElement.current instanceof HTMLElement) {
@@ -41,19 +41,14 @@ export const Modal: React.FC<ModalProps> = ({children, handleOnClose, isOpen}) =
         }
 
 
-    },[handleOnClose]);
+    }, [handleOnClose]);
 
-    // const handleOutsideClick = (event: React.MouseEvent<HTMLDialogElement, MouseEvent> | Event) => {
-    //     const { current } = modalRef;
-    //     if (event.target === current) handleOnClose(event);
-    // };
 
     return ReactDOM.createPortal((
-      <dialog className="modal"
-          ref={modalRef}
-          // onClick={handleOutsideClick}
-      >
-          {children}
-      </dialog>
+        <dialog className="modal"
+                ref={modalRef}
+        >
+            {children}
+        </dialog>
     ), document.body);
 };

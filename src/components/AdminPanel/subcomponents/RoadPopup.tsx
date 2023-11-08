@@ -13,6 +13,8 @@ interface Props {
     description: string;
     url: string;
     realisationYear: number,
+    startAddress: string,
+    endAddress: string,
 
 }
 
@@ -27,8 +29,8 @@ export const RoadPopup = (props: Props) => {
         description: props.description,
         realisationYear: props.realisationYear,
         url: props.url,
-        startAddress: '',
-        endAddress: '',
+        startAddress: props.startAddress,
+        endAddress: props.endAddress,
     });
 
 

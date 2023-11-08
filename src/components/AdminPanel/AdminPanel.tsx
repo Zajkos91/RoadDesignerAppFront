@@ -6,7 +6,7 @@ import './AdminPanel.css';
 import {AuthContext} from "../../contexts/auth.contexts";
 import {useNavigate} from "react-router-dom";
 import {Btn} from "../common/Button/Btn";
-import {RoadPopup} from "./subcomponents/RoadPopup";
+
 
 export const AdminPanel = () => {
 
@@ -48,7 +48,7 @@ export const AdminPanel = () => {
     return (
         <>
             <div className="admin-container">
-                <h1>Lista inwestycji drogowych:</h1>
+                <h2>Lista inwestycji drogowych:</h2>
                 <section>
                     {
                         roads.map(road => (
@@ -58,14 +58,16 @@ export const AdminPanel = () => {
                                           description={road.description}
                                           url={road.url}
                                           realisationYear={road.realisationYear}
+                                          startAddress={road.startAddress}
+                                          endAddress={road.endAddress}
                                           onDelete={handleDeleteRoad}
                                           onRefresh={handleRefresh}/>
                         ))
                     }
 
                 </section>
+                <Btn to="/add" text="Dodaj"/>
                 <button onClick={handleClick}>Wyloguj</button>
-                <Btn to="/add" text="Dodaj inwestycje drogową"/>
             </div>
 
         </>

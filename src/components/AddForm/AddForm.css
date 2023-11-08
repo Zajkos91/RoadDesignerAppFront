@@ -1,33 +1,45 @@
-/*h1 {*/
-/*    text-align: center;*/
-/*}*/
-.add-form {
-    display: block;
-    max-width: 800px;
-    position: absolute;
+
+.add-form, .added {
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    padding: 15px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(54, 55, 55, 0.9);
+    border-radius: 10px;
+    border: none;
+    z-index: 101;
+    width: 20%;
+    color: #fff;
 
 }
-.add-form label {
-    display: block;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 25px;
+
+.add-form h2, .added h3 {
+    text-align: center;
 }
+
+.add-form label {
+    width: 100%;
+}
+
+.add-form label input {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+.add-form label textarea {
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
 .add-form small {
 
     font-weight: normal;
-
-}
-
-.add-form input, .add-form textarea {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    box-sizing: border-box;
-    padding: 10px;
 }
 
 .add-form button {
@@ -36,3 +48,8 @@
 
     padding: 10px;
 }
+
+.added .btn {
+    margin: 10px 0px;
+}
+

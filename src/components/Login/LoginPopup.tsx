@@ -1,9 +1,7 @@
 import React, {SyntheticEvent, useContext, useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './LoginPopup.css';
-import {Btn} from "../common/Button/Btn";
 import {InputPassword} from "./subcomponents/ShowInputPassword";
-import {Modal} from "../Modal/Modal";
 import {Spinner} from "../common/Spinner/Spinner";
 import bcrypt from "bcryptjs-react";
 import {AuthContext} from "../../contexts/auth.contexts";
@@ -87,10 +85,11 @@ export const LoginPopup = () => {
         return <Spinner text='Logowanie...'/>
     }
 
-    const validateMessageComponent = validateMessage.length ? <p className="validate-message">{validateMessage}</p> : null;
+    const validateMessageComponent = validateMessage.length ?
+        <p className="validate-message">{validateMessage}</p> : null;
 
     return <>
-        {/*<Modal>*/}
+
         <div className="center">
             <button onClick={handleClick}>Login</button>
         </div>
@@ -117,12 +116,10 @@ export const LoginPopup = () => {
                     </label>
                 </div>
 
-
-                {/*<Btn to="/admin" text="Zaloguj"/>*/}
-                <button>Zaloguj</button>
+                <button className="login-button">Zaloguj</button>
 
             </form>
         </div>
-        {/*</Modal>*/}
+
     </>
 }

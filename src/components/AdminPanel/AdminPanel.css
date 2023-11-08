@@ -1,5 +1,39 @@
+
+body {
+
+    height: 100vh;
+    background: url("../../images/background/background.PNG") no-repeat center center;
+}
+
 .admin-container {
-    position: fixed;
-    top: 10%;
-    left: 4%;
+    display: block;
+    margin-top: 70px;
+    margin-left: 30px;
+    height: 85vh;
+    background-color: rgba(54, 55, 55, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.admin-container h2, section {
+    color: #fff;
+    margin-bottom: 10px;
+
+}
+
+.admin-container section {
+    font-size: 17px;
+
+}
+
+button {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
 }

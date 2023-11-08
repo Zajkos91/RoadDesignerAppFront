@@ -1,7 +1,6 @@
 .map {
     position: fixed;
     background-color: #2A913E;
-    /*height: calc(100vh - 45px);*/
     z-index: -100;
     top: 0;
     right: 0;

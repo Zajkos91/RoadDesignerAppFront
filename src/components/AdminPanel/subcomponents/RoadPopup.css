@@ -8,6 +8,7 @@
 .road-popup {
     display: flex;
     flex-direction: column;
+
 }
 
 .form {
@@ -17,10 +18,25 @@
 
 .form-row {
     display: flex;
+    color: #fff;
 }
 
-input {
-    display: flex;
-    flex-grow: 1;
+.form-row label{
+    width: 100%;
+}
+
+.form-row label input {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+.form-row label textarea {
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    border-radius: 3px;
+    padding: 3px 5px;
 }
 
