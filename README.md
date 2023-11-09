@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+# Road Designer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![RoadDesignerApp Logo](src/images/logo/logo.png)
 
-## Available Scripts
+An application for managing infrastructure projects in Highway & Road Design & Engineering Companies.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Introduction](#introduction)
+2. [Demo](#demo)
+3. [Features](#features)
+4. [Tech Stack](#tech-stack)
+5. [Getting Started](#getting-started)
+6. [TODO](#todo)
+7. [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Introduction
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+In the project industry, effective project management is the cornerstone of successful and timely task completion. An application that monitors task progress, approaching deadlines, and assigns specific tasks to individuals is essential in any project office.
 
-### `npm test`
+## Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![Demo Video](https://img.youtube.com/vi/xPs4Cr-X3pY/0.jpg)](https://www.youtube.com/watch?v=xPs4Cr-X3pY)
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Road Designer App comes with a wide range of features:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Displaying Projects**: Enables the display of projects using a search feature. Each project is integrated with Leaflet Routing to visualize the route.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Project Modification**: Upon logging into the admin panel, it is possible to modify the parameters of a specific project.
 
-### `npm run eject`
+- **Project Deletion**: Allows for the removal of individual projects.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Javascript](https://img.shields.io/badge/Javascript-F0DB4F?style=for-the-badge&labelColor=black&logo=javascript&logoColor=F0DB4F)
+![Typescript](https://img.shields.io/badge/Typescript-007acc?style=for-the-badge&labelColor=black&logo=typescript&logoColor=007acc)
+![React](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)
+![Nodejs](https://img.shields.io/badge/Nodejs-3C873A?style=for-the-badge&labelColor=black&logo=node.js&logoColor=3C873A)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![MySql](https://shields.io/badge/MySQL-lightgrey?logo=mysql&style=plastic&logoColor=white&labelColor=blue)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Run Locally
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run The Road Designer App locally, follow these installation steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Zajkos91/RoadDesignerAppFront.git
+   git clone https://github.com/Zajkos91/RoadDesignerAppBack.git
+   ```
+
+2. Import database:
+
+   ```bash
+   https://github.com/Zajkos91/RoadDesignerAppBack/blob/develop/drogowiec_roads.sql
+   -implement to your MySql
+    ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the app:
+
+    -Backend
+   ```bash
+   npm start: dev
+   ```
+    -Frontend
+   ```bash
+   npm start
+   ```
+
+## TODO
+
+- **Fixed Bugs**: there is one error that does not let me rest. Maybe You would like to help me fix it. I explained it in file below. 
+    ```bash
+   https://github.com/Zajkos91/RoadDesignerAppFront/blob/develop/src/components/Map/SingleRouteLine.tsx
+    ```
+- **Add validation and errors handlers**: there is a lack of error handling and form validation in many parts of the code. I have wasted a lot of time trying to fix the React leaflet routing errors.   
+- **Improve search bar**: to be able to filter by name, designers, year of realisation etc.
+- **Modify road record**: to be able to add, remove new tasks in current projects.
+- **and many more...**
+
+## Contact
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-informational?style=social&logo=linkedin)](https://www.linkedin.com/in/pzajkowski91/)
+

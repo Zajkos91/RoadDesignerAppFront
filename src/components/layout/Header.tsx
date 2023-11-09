@@ -54,7 +54,9 @@ export const Header = () => {
 
                         <img className="search-icon" src={searchIcon} alt="search-icon"/>
                         <label className='result-container'>
-                            <input className="search-input" type="text" value={inputVal}
+                            <input className="search-input"
+                                   type="text" value={inputVal}
+                                   placeholder="Szukaj..."
                                    onChange={e => setInputVal(e.target.value)}/>
                             {/*<Btn*/}
                             {/*text="Szukaj"/>*/}

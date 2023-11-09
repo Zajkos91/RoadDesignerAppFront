@@ -14,19 +14,18 @@ export const Map = () => {
     const [roads, setRoads] = useState<SimpleRoadEntity[]>([]);
     const {search} = useContext(SearchContext);
 
+
     useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/road/search/${search}`);
             const data = await res.json();
             setRoads(data);
-
         })();
 
     }, [search]);
 
     return (
         <>
-
             <div className="map">
 
                 <MapContainer center={[53.1450159, 22.1319976]} zoom={8}>
@@ -38,33 +37,23 @@ export const Map = () => {
 
                     {
                         roads.map(road => (
-                            <>
 
+                            <React.Fragment key={road.id}>
                                 <Marker key={road.id}
                                         position={[road.startLat, road.startLon]}>
                                     <Popup>
                                         <SingleRoad id={road.id}/>
                                     </Popup>
-
                                 </Marker>
-
                                 <SingleRouteLine
-
                                     positionStart={[road.startLat, road.startLon]}
                                     positionEnd={[road.endLat, road.endLon]}
                                 />
-
-
-                            </>
-
+                            </React.Fragment>
                         ))
-
                     }
-
-
                 </MapContainer>
             </div>
-
         </>
     )
 }

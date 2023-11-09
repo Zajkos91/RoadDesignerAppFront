@@ -17,7 +17,7 @@ export const SearchDropDown = (props: Props) => {
             {props.roads.filter(road => {
                 const searchTerm = props.search.toLowerCase();
                 const roadName = road.name.toLowerCase();
-                return searchTerm && roadName.startsWith(searchTerm) && roadName !== searchTerm;
+                return searchTerm && roadName.includes(searchTerm) && roadName !== searchTerm;
             })
                 .slice(0, 10)
                 .map(road => (
