@@ -1,6 +1,6 @@
 # Road Designer
 
-![RoadDesignerApp Logo](src/images/logo/logo.png)
+![RoadDesignerApp Logo](logo.png)
 
 An application for managing infrastructure projects in Highway & Road Design & Engineering Companies.
 
