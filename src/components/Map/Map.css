@@ -1,0 +1,28 @@
+.map {
+    position: fixed;
+    background-color: #2A913E;
+    z-index: -100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+
+.leaflet-container {
+height: 100%;
+
+}
+
+.leaflet-control-container {
+    display: none;
+}
+
+path > .leaflet-interactive {
+    pointer-events: none;
+    cursor: none;
+}
+
+.leaflet-pane > svg path {
+    pointer-events: none;
+}

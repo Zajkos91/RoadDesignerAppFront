@@ -1,0 +1,8 @@
+path .leaflet-interactive {
+    pointer-events: none;
+    cursor: none;
+}
+
+.leaflet-pane > svg path {
+    pointer-events: none;
+}

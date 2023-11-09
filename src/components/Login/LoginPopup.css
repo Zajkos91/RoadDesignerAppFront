@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #363737;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.center button:hover {
+    color: black;
+    background-color: rgba(109, 110, 110, 0.62);
+}
+
+
+.popup {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms,
+    display 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+}
+
+.popup.active {
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 200ms,
+    display 200ms ease-in-out 0ms,
+    transform 200ms ease-in-out 0ms;
+
+    backdrop-filter: blur(2px);
+
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #888;
+    color: #eee;
+    text-align: center;
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.popup .form h2 {
+    text-align: center;
+    color: #222;
+    margin: 10px 0 20px;
+    font-size: 25px;
+
+}
+
+.popup .form .form-element {
+    margin: 15px 0;
+}
+
+.popup .form .form-element label {
+    font-size: 14px;
+    color: #222;
+
+}
+
+.popup .form .form-element input {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+
+}
+
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.showLabel {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0px;
+
+}
+
+.showLabel > input {
+    width: 100%;
+    outline: none;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+.showButton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin-left: 2px;
+    margin-top: 5px
+}
+
+.login {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.login-button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #363737;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.login-button:hover {
+
+    background-color: rgba(109, 110, 110, 0.62);
+    color: black;
+
+
+}
+
+.validate-message {
+    color: red;
+    padding: 1px;
+    background-color: #eaa7a7;
+    border: 1px solid #6e0c0c;
+    border-radius: 3px;
+    text-align: center;
+}
+
